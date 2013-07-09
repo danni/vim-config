@@ -6,7 +6,7 @@ set guifont=Source\ Code\ Pro\ Medium\ 10
 set guicursor=i-r:block-Cursor/iCursor-blinkon600-blinkoff600
 set guioptions-=T
 set guioptions-=t
-set guitablabel=%f%M
+set guitablabel=%f\ %M
 set guitabtooltip=%F
 
 set nobackup
@@ -72,12 +72,22 @@ nnoremap <C-S-t> :tabnew<CR>
 inoremap <C-S-t> <Esc>:tabnew<CR>
 
 nnoremap <A-1> 1gt
+inoremap <A-1> <Esc>1gt
 nnoremap <A-2> 2gt
+inoremap <A-2> <Esc>2gt
 nnoremap <A-3> 3gt
+inoremap <A-3> <Esc>3gt
 nnoremap <A-4> 4gt
+inoremap <A-4> <Esc>4gt
 nnoremap <A-5> 5gt
+inoremap <A-5> <Esc>5gt
 nnoremap <A-6> 6gt
+inoremap <A-6> <Esc>6gt
 nnoremap <A-7> 7gt
+inoremap <A-7> <Esc>7gt
 nnoremap <A-8> 8gt
+inoremap <A-8> <Esc>8gt
 nnoremap <A-9> 9gt
+inoremap <A-9> <Esc>9gt
 nnoremap <A-0> 10gt
+inoremap <A-0> <Esc>10gt
