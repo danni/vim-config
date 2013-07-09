@@ -4,7 +4,8 @@ execute pathogen#infect()
 colorscheme distinguished
 set guifont=Source\ Code\ Pro\ Medium\ 10
 set guicursor=i-r:block-Cursor/iCursor-blinkon600-blinkoff600
-set guioptions-=Tt
+set guioptions-=T
+set guioptions-=t
 set guitablabel=%f%M
 set guitabtooltip=%F
 
@@ -62,8 +63,8 @@ au FileType tex,docbk,html,htmldjango ts=2 sts=2 sw=2
 
 " tag bar
 if has("gui_running")
-    call tagbar#ToggleWindow()
-    set columns=121
+    au BufNewFile,BufRead *.py Tagbar
+    au BufNewFile,BufRead *.py set columns=121
 endif
 
 " tabs
