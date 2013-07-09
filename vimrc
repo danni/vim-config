@@ -2,12 +2,17 @@ runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
 colorscheme distinguished
-set guifont=Source\ Code\ Pro\ Medium\ 10
 set guicursor=i-r:block-Cursor/iCursor-blinkon600-blinkoff600
 set guioptions-=T
 set guioptions-=t
 set guitablabel=%f\ %M
 set guitabtooltip=%F
+
+if has("gui_gtk2")
+    set guifont=Source\ Code\ Pro\ Medium\ 10
+else
+    set guifont=Source\ Code\ Pro\ Light:h11
+endif
 
 set nobackup
 set viminfo='20,\"50
