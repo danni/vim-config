@@ -51,8 +51,14 @@ noremap <silent> ,c :<C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<
 noremap <silent> ,u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:noh<CR
 
 " editing defaults
-set ts=4 sts=4 tw=0 sw=4 expandtab smarttab cc=80
+set ts=4 sts=4 tw=0 sw=4 expandtab smarttab cc=81
 
 " file type defaults
 au FileType tex,docbk,html set tw=78
 au FileType tex,docbk,html,htmldjango ts=2 sts=2 sw=2
+
+" tag bar
+if has("gui_running")
+    call tagbar#ToggleWindow()
+    set columns=121
+endif
