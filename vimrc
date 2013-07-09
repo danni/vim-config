@@ -3,10 +3,12 @@ execute pathogen#infect()
 
 colorscheme distinguished
 set guicursor=i-r:block-Cursor/iCursor-blinkon600-blinkoff600
-set guioptions-=T
-set guioptions-=t
 set guitablabel=%f\ %M
 set guitabtooltip=%F
+
+set guioptions-=T
+set guioptions-=t
+set guioptions-=m
 
 if has("gui_gtk2")
     set guifont=Source\ Code\ Pro\ Medium\ 10
