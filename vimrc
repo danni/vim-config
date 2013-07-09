@@ -63,8 +63,8 @@ au FileType tex,docbk,html,htmldjango ts=2 sts=2 sw=2
 
 " tag bar
 if has("gui_running")
-    au BufNewFile,BufRead *.py Tagbar
-    au BufNewFile,BufRead *.py set columns=121
+    au FileType python TagbarOpen
+    au FileType python set columns=121
 endif
 
 " tabs
