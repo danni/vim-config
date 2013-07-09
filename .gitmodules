@@ -6,7 +6,7 @@
 	url = https://github.com/tpope/vim-sensible.git
 [submodule "bundle/vim-less"]
 	path = bundle/vim-less
-	url = github:groenewege/vim-less.git
+	url = https://github.com/groenewege/vim-less.git
 [submodule "bundle/jedi-vim"]
 	path = bundle/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim.git
