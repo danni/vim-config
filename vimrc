@@ -4,7 +4,9 @@ execute pathogen#infect()
 colorscheme distinguished
 set guifont=Source\ Code\ Pro\ Medium\ 10
 set guicursor=i-r:block-Cursor/iCursor-blinkon600-blinkoff600
-set guioptions-=T
+set guioptions-=Tt
+set guitablabel=%f%M
+set guitabtooltip=%F
 
 set nobackup
 set viminfo='20,\"50
