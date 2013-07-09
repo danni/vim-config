@@ -37,3 +37,22 @@ set formatoptions=crotqc
 let g:jedi#autocompletion_command = "<C-n>"
 let g:jedi#popup_on_dot = 0
 let g:jedi#show_function_definition = "0"
+
+" commenting
+let b:comment_leader = '# '
+au FileType haskell,vhdl,ada let b:comment_leader = '-- '
+au FileType vim let b:comment_leader = '" '
+au FileType c,cpp,java let b:comment_leader = '// '
+au FileType tex let b:comment_leader = '% '
+
+" comment
+noremap <silent> ,c :<C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:noh<CR>
+" uncomment
+noremap <silent> ,u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:noh<CR
+
+" editing defaults
+set ts=4 sts=4 tw=0 sw=4 expandtab smarttab
+
+" file type defaults
+au FileType tex,docbk,html set tw=78
+au FileType tex,docbk,html,htmldjango ts=2 sts=2 sw=2
