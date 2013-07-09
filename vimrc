@@ -40,7 +40,7 @@ set formatoptions=crotqc
 " settings for Jedi
 let g:jedi#autocompletion_command = "<C-n>"
 let g:jedi#popup_on_dot = 0
-let g:jedi#show_function_definition = "0"
+let g:jedi#show_function_definition = 0
 
 " commenting
 let b:comment_leader = '# '
