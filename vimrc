@@ -4,6 +4,7 @@ execute pathogen#infect()
 colorscheme distinguished
 set guifont=Source\ Code\ Pro\ Medium\ 10
 set guicursor=i-r:block-Cursor/iCursor-blinkon600-blinkoff600
+set guioptions-=T
 
 set nobackup
 set viminfo='20,\"50
@@ -62,3 +63,18 @@ if has("gui_running")
     call tagbar#ToggleWindow()
     set columns=121
 endif
+
+" tabs
+nnoremap <C-S-t> :tabnew<CR>
+inoremap <C-S-t> <Esc>:tabnew<CR>
+
+nnoremap <A-1> 1gt
+nnoremap <A-2> 2gt
+nnoremap <A-3> 3gt
+nnoremap <A-4> 4gt
+nnoremap <A-5> 5gt
+nnoremap <A-6> 6gt
+nnoremap <A-7> 7gt
+nnoremap <A-8> 8gt
+nnoremap <A-9> 9gt
+nnoremap <A-0> 10gt
