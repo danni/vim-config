@@ -24,6 +24,8 @@ set pastetoggle=<F10>
 " disable mouse pointer moving in Insert mode, do focus follows mouse
 set mouse=nv mousefocus
 
+" remove unwanted files out of wildmenus
+set wildignore+=dist,*env,*.pyc
 
 if has("syntax")
   syntax on
