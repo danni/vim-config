@@ -1,3 +1,8 @@
+" settings for Jedi
+let g:jedi#autocompletion_command = "<C-n>"
+let g:jedi#popup_on_dot = 0
+let g:jedi#show_function_definition = 0
+
 runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
@@ -51,11 +56,6 @@ set list listchars=tab:»·,nbsp:━
 " format options
 " :help fo-table
 set formatoptions=crotqc
-
-" settings for Jedi
-let g:jedi#autocompletion_command = "<C-n>"
-let g:jedi#popup_on_dot = 0
-let g:jedi#show_function_definition = 0
 
 " commenting
 let b:comment_leader = '# '
