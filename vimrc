@@ -70,7 +70,7 @@ noremap <silent> ,c :<C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<
 noremap <silent> ,u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:noh<CR
 
 " editing defaults
-set ts=4 sts=4 tw=0 sw=4 expandtab smarttab smartindent autoindent cc=81
+au FileType * set ts=4 sts=4 tw=0 sw=4 expandtab smarttab smartindent autoindent cc=81
 
 " file type defaults
 au FileType tex,docbk,html set tw=78
