@@ -1,9 +1,11 @@
 " settings for python-mode
 let g:pymode_run = 0
-let g:pymode_lint_checker = "pylint"
-let g:pymode_lint_config = "conf/pylint.conf"
+let g:pymode_lint_checker = "pep8,pylint"
 let g:pymode_rope_autocomplete_map = '<C-n>'
 let g:pymode_folding = 0
+let g:pymode_line_ignore = "F0401"
+let g:pymode_doc = 0
+let g:pymode_lint_signs = 0
 
 filetype off
 
