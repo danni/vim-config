@@ -41,8 +41,8 @@ set modelines=3
 
 set pastetoggle=<F10>
 
-" disable mouse pointer moving in Insert mode, do focus follows mouse
-set mouse=nv mousefocus
+" disable mouse pointer moving in Insert mode
+set mouse=nv
 
 " remove unwanted files out of wildmenus
 set wildignore+=dist,*env,*.pyc
