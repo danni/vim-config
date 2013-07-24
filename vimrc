@@ -61,7 +61,7 @@ set list listchars=tab:»·,nbsp:━
 
 " format options
 " :help fo-table
-set formatoptions=crotqc
+set formatoptions=crotqj
 
 " commenting
 let b:comment_leader = '# '
