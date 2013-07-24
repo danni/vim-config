@@ -1,10 +1,16 @@
-" settings for Jedi
-let g:jedi#autocompletion_command = "<C-n>"
-let g:jedi#popup_on_dot = 0
-let g:jedi#show_function_definition = 0
+" settings for python-mode
+let g:pymode_run = 0
+let g:pymode_lint_checker = "pylint"
+let g:pymode_lint_config = "conf/pylint.conf"
+let g:pymode_rope_autocomplete_map = '<C-n>'
+let g:pymode_folding = 0
+
+filetype off
 
 runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+
+filetype plugin indent on
 
 colorscheme distinguished
 set guicursor=i-r:block-Cursor/iCursor-blinkon600-blinkoff600
@@ -70,11 +76,11 @@ noremap <silent> ,c :<C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<
 noremap <silent> ,u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:noh<CR
 
 " editing defaults
-au FileType * set ts=4 sts=4 tw=0 sw=4 expandtab smarttab smartindent autoindent cc=81
+set ts=4 sts=4 tw=0 sw=4 expandtab smarttab smartindent autoindent cc=81
 
 " file type defaults
-au FileType tex,docbk,html set tw=78
-au FileType tex,docbk,html,htmldjango set ts=2 sts=2 sw=2
+au FileType tex,docbk,html setlocal tw=78
+au FileType tex,docbk,html,htmldjango setlocal ts=2 sts=2 sw=2
 
 " tag bar
 if has("gui_running")
