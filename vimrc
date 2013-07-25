@@ -86,6 +86,8 @@ au FileType tex,docbk,html,htmldjango setlocal ts=2 sts=2 sw=2
 
 " tag bar
 if has("gui_running")
+    set number
+    set columns=84
     au FileType python TagbarOpen
     au FileType python set columns=125
 endif
