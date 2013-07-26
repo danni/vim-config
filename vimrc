@@ -3,9 +3,9 @@ let g:pymode_run = 0
 let g:pymode_lint_checker = "pep8,pylint"
 let g:pymode_rope_autocomplete_map = '<C-n>'
 let g:pymode_folding = 0
-let g:pymode_line_ignore = "F0401"
-let g:pymode_doc = 0
+let g:pymode_lint_ignore = "F0401"
 let g:pymode_lint_signs = 0
+let g:pymode_options = 0
 
 filetype off
 
@@ -40,6 +40,8 @@ set modeline
 set modelines=3
 
 set pastetoggle=<F10>
+
+set completeopt=menu,longest
 
 " disable mouse pointer moving in Insert mode
 set mouse=nv
@@ -86,6 +88,9 @@ au FileType tex,docbk,html,htmldjango setlocal ts=2 sts=2 sw=2
 
 " tag bar
 if has("gui_running")
+    set number
+    set columns=84
+
     au FileType python TagbarOpen
     au FileType python set columns=125
 endif
