@@ -5,6 +5,7 @@ let g:pymode_rope_autocomplete_map = '<C-n>'
 let g:pymode_folding = 0
 let g:pymode_lint_ignore = "F0401"
 let g:pymode_lint_signs = 0
+let g:pymode_lint_mccabe_complexity = 10
 let g:pymode_options = 0
 
 filetype off
