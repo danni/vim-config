@@ -5,6 +5,7 @@ let g:pymode_rope_autocomplete_map = '<C-n>'
 let g:pymode_folding = 0
 let g:pymode_lint_ignore = "F0401"
 let g:pymode_lint_signs = 0
+let g:pymode_lint_mccabe_complexity = 10
 let g:pymode_options = 0
 
 filetype off
@@ -101,32 +102,46 @@ nnoremap <C-S-t> :tabnew<CR>
 inoremap <C-S-t> <Esc>:tabnew<CR>
 
 nnoremap <A-1> 1gt
-inoremap <A-1> <Esc>1gt
-vnoremap <A-1> <Esc>1gt
+inoremap <A-1> <Esc>1gti
+vnoremap <A-1> <Esc>1gtv
 nnoremap <A-2> 2gt
-inoremap <A-2> <Esc>2gt
-vnoremap <A-1> <Esc>2gt
+inoremap <A-2> <Esc>2gti
+vnoremap <A-1> <Esc>2gtv
 nnoremap <A-3> 3gt
-inoremap <A-3> <Esc>3gt
-vnoremap <A-1> <Esc>3gt
+inoremap <A-3> <Esc>3gti
+vnoremap <A-1> <Esc>3gtv
 nnoremap <A-4> 4gt
-inoremap <A-4> <Esc>4gt
-vnoremap <A-1> <Esc>4gt
+inoremap <A-4> <Esc>4gti
+vnoremap <A-1> <Esc>4gtv
 nnoremap <A-5> 5gt
-inoremap <A-5> <Esc>5gt
-vnoremap <A-1> <Esc>5gt
+inoremap <A-5> <Esc>5gti
+vnoremap <A-1> <Esc>5gtv
 nnoremap <A-6> 6gt
-inoremap <A-6> <Esc>6gt
-vnoremap <A-1> <Esc>6gt
+inoremap <A-6> <Esc>6gti
+vnoremap <A-1> <Esc>6gtv
 nnoremap <A-7> 7gt
-inoremap <A-7> <Esc>7gt
-vnoremap <A-1> <Esc>7gt
+inoremap <A-7> <Esc>7gti
+vnoremap <A-1> <Esc>7gtv
 nnoremap <A-8> 8gt
-inoremap <A-8> <Esc>8gt
-vnoremap <A-1> <Esc>8gt
+inoremap <A-8> <Esc>8gti
+vnoremap <A-1> <Esc>8gtv
 nnoremap <A-9> 9gt
-inoremap <A-9> <Esc>9gt
-vnoremap <A-1> <Esc>9gt
+inoremap <A-9> <Esc>9gti
+vnoremap <A-1> <Esc>9gtv
 nnoremap <A-0> 10gt
-inoremap <A-0> <Esc>10gt
-vnoremap <A-1> <Esc>10gt
+inoremap <A-0> <Esc>10gti
+vnoremap <A-1> <Esc>10gtv
+
+" auto-tabulate cucumber files
+au FileType cucumber inoremap <silent> <Bar>    <Bar><Esc>:call <SID>align()<CR>a
+
+function s:align()
+    let p = '^\s*|\s.*\s|\s*$'
+    if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+        let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+        let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+        Tabularize/|/l1
+        normal! 0
+        call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+    endif
+endfunction

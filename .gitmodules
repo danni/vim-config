@@ -34,3 +34,6 @@
 [submodule "bundle/python-mode"]
 	path = bundle/python-mode
 	url = https://github.com/klen/python-mode.git
+[submodule "bundle/tabular"]
+	path = bundle/tabular
+	url = github:godlygeek/tabular
