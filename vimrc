@@ -15,6 +15,9 @@ execute pathogen#infect()
 
 filetype plugin indent on
 
+" close quickfix window on buffer close
+au BufUnload * lclose
+
 colorscheme distinguished
 set guicursor=i-r:block-Cursor/iCursor-blinkon600-blinkoff600
 set guitablabel=%f\ %M
