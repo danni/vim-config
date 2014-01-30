@@ -90,11 +90,17 @@ au FileType less nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR>
 
 " tag bar
 if has("gui_running")
+    function Columns(size)
+        if &columns < a:size
+            let &columns=a:size
+        endif
+    endfunction
+
     set number
-    set columns=84
+    call Columns(84)
 
     au FileType python TagbarOpen
-    au FileType python set columns=125
+    au FileType python call Columns(125)
 endif
 
 " tabs
