@@ -37,3 +37,6 @@
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = github:godlygeek/tabular
+[submodule "bundle/dockerfile"]
+	path = bundle/dockerfile
+	url = https://github.com/honza/dockerfile.vim
