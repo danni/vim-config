@@ -52,6 +52,8 @@ set mouse=nv
 
 " remove unwanted files out of wildmenus
 set wildignore+=dist,*env,*.pyc
+set wildmode=longest,list,full
+set wildmenu
 
 if has("syntax")
   syntax on
