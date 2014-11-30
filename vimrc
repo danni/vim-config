@@ -11,7 +11,8 @@ let g:pymode_options = 0
 filetype off
 
 runtime bundle/pathogen/autoload/pathogen.vim
-execute pathogen#infect()
+call pathogen#infect()
+call pathogen#helptags()
 
 filetype plugin indent on
 
