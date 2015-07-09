@@ -49,3 +49,6 @@
 [submodule "bundle/CountJump"]
 	path = bundle/CountJump
 	url = https://github.com/vim-scripts/CountJump.git
+[submodule "bundle/vim-jsx"]
+	path = bundle/vim-jsx
+	url = github:mxw/vim-jsx

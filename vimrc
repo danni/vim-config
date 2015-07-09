@@ -63,6 +63,10 @@ if has("syntax")
   highlight BadWhitespace ctermbg=red guibg=red
   autocmd FileType * syntax match BadWhitespace /\s\+$/
 
+  " highlight non-ascii characters
+  highlight NonASCII ctermbg=green guibg=green
+  autocmd FileType python syntax match NonASCII "[^\x00-\x7F]"
+
   " highlight special keys
   highlight SpecialKey ctermfg=red guifg=red
 endif
