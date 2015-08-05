@@ -111,7 +111,15 @@ if has("gui_running")
 
     au FileType python TagbarOpen
     au FileType python call Columns(125)
+
+    set spell
 endif
+
+" Cut, copy and paste
+vnoremap <C-S-c> "+y
+vnoremap <C-S-x> "+d
+nnoremap <C-S-v> "+p
+inoremap <C-S-v> <Esc>"+p
 
 " tabs
 nnoremap <C-S-t> :tabnew<CR>
