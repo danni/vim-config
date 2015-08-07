@@ -116,48 +116,37 @@ if has("gui_running")
 endif
 
 " Cut, copy and paste
-vnoremap <C-S-c> "+y
-vnoremap <C-S-x> "+d
-nnoremap <C-S-v> "+p
-inoremap <C-S-v> <Esc>"+p
+vnoremap <C-c> "+y
+vnoremap <C-x> "+d
+inoremap <C-v> <C-o>"+p
 
 " tabs
-nnoremap <C-S-t> :tabnew<CR>
-inoremap <C-S-t> <Esc>:tabnew<CR>
+nnoremap <C-t> :tabnew<CR>
+inoremap <C-t> <C-o>:tabnew<CR>
 
 nnoremap <A-1> 1gt
-inoremap <A-1> <Esc>1gti
-vnoremap <A-1> <Esc>1gtv
+inoremap <A-1> <C-o>1gt
 nnoremap <A-2> 2gt
-inoremap <A-2> <Esc>2gti
-vnoremap <A-1> <Esc>2gtv
+inoremap <A-2> <C-o>2gt
 nnoremap <A-3> 3gt
-inoremap <A-3> <Esc>3gti
-vnoremap <A-1> <Esc>3gtv
+inoremap <A-3> <C-o>3gt
 nnoremap <A-4> 4gt
-inoremap <A-4> <Esc>4gti
-vnoremap <A-1> <Esc>4gtv
+inoremap <A-4> <C-o>4gt
 nnoremap <A-5> 5gt
-inoremap <A-5> <Esc>5gti
-vnoremap <A-1> <Esc>5gtv
+inoremap <A-5> <C-o>5gt
 nnoremap <A-6> 6gt
-inoremap <A-6> <Esc>6gti
-vnoremap <A-1> <Esc>6gtv
+inoremap <A-6> <C-o>6gt
 nnoremap <A-7> 7gt
-inoremap <A-7> <Esc>7gti
-vnoremap <A-1> <Esc>7gtv
+inoremap <A-7> <C-o>7gt
 nnoremap <A-8> 8gt
-inoremap <A-8> <Esc>8gti
-vnoremap <A-1> <Esc>8gtv
+inoremap <A-8> <C-o>8gt
 nnoremap <A-9> 9gt
-inoremap <A-9> <Esc>9gti
-vnoremap <A-1> <Esc>9gtv
+inoremap <A-9> <C-o>9gt
 nnoremap <A-0> 10gt
-inoremap <A-0> <Esc>10gti
-vnoremap <A-1> <Esc>10gtv
+inoremap <A-0> <C-o>10gt
 
 " auto-tabulate cucumber files
-au FileType cucumber inoremap <silent> <Bar>    <Bar><Esc>:call <SID>align()<CR>a
+au FileType cucumber inoremap <silent> <Bar>    <Bar><C-o>:call <SID>align()<CR>
 
 function s:align()
     let p = '^\s*|\s.*\s|\s*$'
