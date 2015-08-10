@@ -14,6 +14,10 @@ runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
 
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
 filetype plugin indent on
 
 " close quickfix window on buffer close
@@ -52,8 +56,8 @@ set completeopt=menu,longest
 set mouse=nv
 
 " remove unwanted files out of wildmenus
-set wildignore+=dist,*env,*.pyc
-set wildmode=longest,list,full
+set wildignore+=dist,*env,*.pyc,build,__pycache__
+set wildmode=longest,list
 set wildmenu
 
 if has("syntax")
@@ -73,6 +77,8 @@ endif
 
 " mark tabs and non-breaking spaces
 set list listchars=tab:»·,nbsp:━
+" draw vertical window breaks using something pretty
+set fillchars+=vert:║
 
 " format options
 " :help fo-table
@@ -146,7 +152,7 @@ nnoremap <A-0> 10gt
 inoremap <A-0> <C-o>10gt
 
 " auto-tabulate cucumber files
-au FileType cucumber inoremap <silent> <Bar>    <Bar><C-o>:call <SID>align()<CR>
+au FileType cucumber inoremap <silent> <Bar>    <Bar><Esc>:call <SID>align()<CR>a
 
 function s:align()
     let p = '^\s*|\s.*\s|\s*$'

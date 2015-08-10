@@ -52,3 +52,9 @@
 [submodule "bundle/vim-jsx"]
 	path = bundle/vim-jsx
 	url = github:mxw/vim-jsx
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = https://github.com/bling/vim-airline
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim
