@@ -8,6 +8,20 @@ let g:pymode_lint_signs = 0
 let g:pymode_lint_mccabe_complexity = 10
 let g:pymode_options = 0
 
+" settings for vim-jsx
+" Make it apply to .JS files
+" let g:jsx_ext_required = 0
+
+" settings for vim-flow
+let g:flow#autoclose = 1
+" let g:flow#flowpath = "node_modules/.bin/flow"
+
+" Settings for CtrlP
+let g:ctrlp_open_new_file = "h"
+let g:ctrlp_arg_map = 1
+
+let NERDSpaceDelims = 1
+
 filetype off
 
 runtime bundle/pathogen/autoload/pathogen.vim
@@ -56,7 +70,7 @@ set completeopt=menu,longest
 set mouse=nv
 
 " remove unwanted files out of wildmenus
-set wildignore+=dist,*env,*.pyc,build,__pycache__
+set wildignore+=dist,*env,*.pyc,build,__pycache__,*_modules
 set wildmode=longest,list
 set wildmenu
 
@@ -83,18 +97,6 @@ set fillchars+=vert:║
 " format options
 " :help fo-table
 set formatoptions=crotqj
-
-" commenting
-let b:comment_leader = '# '
-au FileType haskell,vhdl,ada let b:comment_leader = '-- '
-au FileType vim let b:comment_leader = '" '
-au FileType c,cpp,java let b:comment_leader = '// '
-au FileType tex let b:comment_leader = '% '
-
-" comment
-noremap <silent> ,c :<C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:noh<CR>
-" uncomment
-noremap <silent> ,u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:noh<CR
 
 " editing defaults
 set ts=4 sts=4 tw=0 sw=4 expandtab smarttab smartindent autoindent cc=81
