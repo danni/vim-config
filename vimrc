@@ -70,7 +70,7 @@ set completeopt=menu,longest
 set mouse=nv
 
 " remove unwanted files out of wildmenus
-set wildignore+=dist,*env,*.pyc,build,__pycache__,*_modules
+set wildignore+=dist,*env,*.pyc,build,__pycache__,*_modules,main-*.css*,main-*.js*
 set wildmode=longest,list
 set wildmenu
 
