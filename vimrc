@@ -1,26 +1,25 @@
-" settings for python-mode
-let g:pymode_run = 0
-let g:pymode_lint_checkers = ["pep8","pylint"]
-let g:pymode_rope_completion_bind = '<C-n>'
-let g:pymode_folding = 0
-let g:pymode_lint_ignore = "F0401"
-let g:pymode_lint_signs = 0
-let g:pymode_lint_mccabe_complexity = 10
-let g:pymode_options = 0
-
 " settings for vim-jsx
 " Make it apply to .JS files
 " let g:jsx_ext_required = 0
 
 " settings for vim-flow
-let g:flow#autoclose = 1
-" let g:flow#flowpath = "node_modules/.bin/flow"
+let g:flow#enable = 0
 
 " Settings for CtrlP
 let g:ctrlp_open_new_file = "h"
 let g:ctrlp_arg_map = 1
 
+" Settings for NERD comment plugin
 let NERDSpaceDelims = 1
+
+" Settings for syntastic
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_enable_signs = 0
+let g:syntastic_javascript_checkers = ["jscs", "flow", "eslint"]
+let g:syntastic_python_checkers = ["pep8", "pylint"]
+let g:syntastic_scss_checkers = ["sasslint"]
 
 filetype off
 
@@ -34,7 +33,7 @@ python del powerline_setup
 
 filetype plugin indent on
 
-" close quickfix window on buffer close
+" close quickfix window on buffer closokaye
 au BufUnload * lclose
 
 colorscheme distinguished
@@ -85,7 +84,7 @@ if has("syntax")
   highlight NonASCII ctermbg=green guibg=green
   autocmd FileType python syntax match NonASCII "[^\x00-\x7F]"
 
-  " highlight special keys
+  " highlight special keysokay
   highlight SpecialKey ctermfg=red guifg=red
 endif
 
@@ -115,10 +114,8 @@ if has("gui_running")
     endfunction
 
     set number
-    call Columns(84)
-
-    au FileType python TagbarOpen
-    au FileType python call Columns(125)
+    au FileType * TagbarOpen
+    call Columns(125)
 
     set spell
 endif
