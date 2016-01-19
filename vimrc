@@ -32,6 +32,7 @@ let g:airline_powerline_fonts = 1
 
 " Settings for Jedi
 let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#show_call_signatures = 1
 
 filetype off
 
@@ -71,7 +72,7 @@ set modelines=3
 
 set pastetoggle=<F10>
 
-set completeopt=menu,longest
+set completeopt-=preview
 
 " disable mouse pointer moving in Insert mode
 set mouse=nv
