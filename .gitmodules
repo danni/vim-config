@@ -33,7 +33,7 @@
 	url = https://github.com/pangloss/vim-javascript.git
 [submodule "bundle/tabular"]
 	path = bundle/tabular
-	url = github:godlygeek/tabular
+	url = https://github.com/godlygeek/tabular
 [submodule "bundle/dockerfile"]
 	path = bundle/dockerfile
 	url = https://github.com/honza/dockerfile.vim
@@ -48,7 +48,7 @@
 	url = https://github.com/vim-scripts/CountJump.git
 [submodule "bundle/vim-jsx"]
 	path = bundle/vim-jsx
-	url = github:mxw/vim-jsx
+	url = https://github.com/mxw/vim-jsx
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim
