@@ -1,6 +1,12 @@
-" settings for vim-jsx
-" Make it apply to .JS files
-" let g:jsx_ext_required = 0
+" Python-Mode
+let g:pymode_rope = 0
+let g:pymode_run = 0
+let g:pymode_lint = 0
+let g:pymode_lint_checkers = []
+let g:pymode_lint_signs = 0
+let g:pymode_folding = 0
+let g:pymode_options = 0
+
 
 " settings for vim-flow
 let g:flow#enable = 0
@@ -21,15 +27,17 @@ let g:syntastic_javascript_checkers = ["jscs", "flow", "eslint"]
 let g:syntastic_python_checkers = ["pep8", "pylint"]
 let g:syntastic_scss_checkers = ["sasslint"]
 
+" Settings for airline
+let g:airline_powerline_fonts = 1
+
+" Settings for Jedi
+let g:jedi#use_tabs_not_buffers = 1
+
 filetype off
 
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
-
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
 
 filetype plugin indent on
 
