@@ -26,13 +26,15 @@ let g:syntastic_enable_signs = 0
 let g:syntastic_javascript_checkers = ["jscs", "flow", "eslint"]
 let g:syntastic_python_checkers = ["pep8", "pylint", "mypy"]
 let g:syntastic_scss_checkers = ["sasslint"]
+let g:syntastic_go_checkers = ["go", "gofmt", "govet"]
+let g:syntastic_rst_checkers = ["rstcheck"]
 
 " Settings for airline
 let g:airline_powerline_fonts = 1
 
 " Settings for Jedi
 let g:jedi#use_tabs_not_buffers = 1
-let g:jedi#show_call_signatures = 1
+let g:jedi#show_call_signatures = 2
 
 filetype off
 
@@ -44,10 +46,11 @@ filetype plugin indent on
 
 " close quickfix window on buffer closokaye
 au BufUnload * lclose
+au FileType python inoremap # X<BS>#
 
 colorscheme distinguished
 set guicursor=i-r:block-Cursor/iCursor-blinkon600-blinkoff600
-set guitablabel=%f\ %M
+set guitablabel=%M%f
 set guitabtooltip=%F
 
 set guioptions-=T
