@@ -18,16 +18,11 @@ let g:ctrlp_arg_map = 1
 " Settings for NERD comment plugin
 let NERDSpaceDelims = 1
 
-" Settings for syntastic
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_enable_signs = 0
-let g:syntastic_javascript_checkers = ["jscs", "flow", "eslint"]
-let g:syntastic_python_checkers = ["pep8", "pylint", "mypy"]
-let g:syntastic_scss_checkers = ["sasslint"]
-let g:syntastic_go_checkers = ["go", "gofmt", "govet"]
-let g:syntastic_rst_checkers = ["rstcheck"]
+" Insert python comments at the current indent level
+au FileType python inoremap # X<BS>#
+
+" Settings for ALE
+let g:ale_sign_column_always = 1
 
 " Settings for airline
 let g:airline_powerline_fonts = 1
@@ -44,14 +39,19 @@ call pathogen#helptags()
 
 filetype plugin indent on
 
-" close quickfix window on buffer closokaye
+" close quickfix window on buffer close
 au BufUnload * lclose
-au FileType python inoremap # X<BS>#
 
+" Interface colours
 colorscheme distinguished
 set guicursor=i-r:block-Cursor/iCursor-blinkon600-blinkoff600
+au BufEnter * highlight SignColumn term=underline ctermfg=243 ctermbg=235 guifg=#767676 guibg=#262626
+
+
+" Set the tab labels
 set guitablabel=%M%f
 set guitabtooltip=%F
+au BufEnter * set guitablabel=%M%f
 
 set guioptions-=T
 set guioptions-=t
@@ -81,7 +81,7 @@ set completeopt-=preview
 set mouse=nv
 
 " remove unwanted files out of wildmenus
-set wildignore+=dist,*env,*.pyc,build,__pycache__,*_modules,main-*.css*,main-*.js*
+set wildignore+=dist,*env,*.pyc,build,__pycache__,*_modules,main-*.css*,main-*.js*,artifacts/,static/
 set wildmode=longest,list
 set wildmenu
 
@@ -115,7 +115,6 @@ set ts=4 sts=4 tw=0 sw=4 expandtab smarttab smartindent autoindent cc=81
 " file type defaults
 au FileType tex,docbk,html setlocal tw=78
 au FileType tex,docbk,html,htmldjango setlocal ts=2 sts=2 sw=2
-au FileType less nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR>
 
 " tag bar
 if has("gui_running")
