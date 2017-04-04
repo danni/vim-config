@@ -131,6 +131,12 @@ if has("gui_running")
     set spell
 endif
 
+" Relative move
+nnoremap <A-C-Up> :move .-2<CR>
+nnoremap <A-C-Down> :move .+1<CR>
+vnoremap <A-C-Up> :move '<-2<CR>gv
+vnoremap <A-C-Down> :move '>+1<CR>gv
+
 " Cut, copy and paste
 vnoremap <C-c> "+y
 vnoremap <C-x> "+d
