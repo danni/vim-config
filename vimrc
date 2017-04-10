@@ -134,8 +134,12 @@ endif
 " Relative move
 nnoremap <A-C-Up> :move .-2<CR>
 nnoremap <A-C-Down> :move .+1<CR>
+nnoremap <A-C-Left> <<
+nnoremap <A-C-Right> >>
 vnoremap <A-C-Up> :move '<-2<CR>gv
 vnoremap <A-C-Down> :move '>+1<CR>gv
+vnoremap <A-C-Left> :<<CR>gv
+vnoremap <A-C-Right> :><CR>gv
 
 " Cut, copy and paste
 vnoremap <C-c> "+y
