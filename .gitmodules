@@ -88,3 +88,6 @@
 [submodule "bundle/conflict-marker"]
 	path = bundle/conflict-marker
 	url = https://github.com/rhysd/conflict-marker.vim
+[submodule "bundle/vim-css3-syntax"]
+	path = bundle/vim-css3-syntax
+	url = https://github.com/hail2u/vim-css3-syntax
