@@ -82,3 +82,9 @@
 [submodule "bundle/ale"]
 	path = bundle/ale
 	url = https://github.com/w0rp/ale.git
+[submodule "bundle/vim-closetag"]
+	path = bundle/vim-closetag
+	url = https://github.com/alvan/vim-closetag
+[submodule "bundle/conflict-marker"]
+	path = bundle/conflict-marker
+	url = https://github.com/rhysd/conflict-marker.vim
