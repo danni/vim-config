@@ -31,6 +31,9 @@ let g:airline_powerline_fonts = 1
 let g:jedi#use_tabs_not_buffers = 1
 let g:jedi#show_call_signatures = 2
 
+" Settings for vim-jsx
+let g:jsx_ext_required = 0
+
 filetype off
 
 runtime bundle/pathogen/autoload/pathogen.vim
@@ -96,7 +99,7 @@ if has("syntax")
   highlight NonASCII ctermbg=green guibg=green
   autocmd FileType python syntax match NonASCII "[^\x00-\x7F]"
 
-  " highlight special keysokay
+  " highlight special keys
   highlight SpecialKey ctermfg=red guifg=red
 endif
 
@@ -134,12 +137,13 @@ endif
 " Relative move
 nnoremap <A-C-Up> :move .-2<CR>
 nnoremap <A-C-Down> :move .+1<CR>
-nnoremap <A-C-Left> <<
-nnoremap <A-C-Right> >>
 vnoremap <A-C-Up> :move '<-2<CR>gv
 vnoremap <A-C-Down> :move '>+1<CR>gv
-vnoremap <A-C-Left> :<<CR>gv
-vnoremap <A-C-Right> :><CR>gv
+" Indent/dedent
+nnoremap <S-TAB> <<
+nnoremap <TAB> >>
+vnoremap <S-TAB> <gv
+vnoremap <TAB> >gv
 
 " Cut, copy and paste
 vnoremap <C-c> "+y
@@ -170,6 +174,14 @@ nnoremap <A-9> 9gt
 inoremap <A-9> <C-o>9gt
 nnoremap <A-0> 10gt
 inoremap <A-0> <C-o>10gt
+
+" Omni complete as Ctrl-Space
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+\ "\<lt>C-n>" :
+\ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+\ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+\ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+imap <C-@> <C-Space>
 
 " auto-tabulate cucumber files
 au FileType cucumber inoremap <silent> <Bar>    <Bar><Esc>:call <SID>align()<CR>a
