@@ -16,7 +16,9 @@ let g:ctrlp_open_new_file = "h"
 let g:ctrlp_arg_map = 1
 
 " Settings for NERD comment plugin
-let NERDSpaceDelims = 1
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCustomDelimiters = {'python': {'left': '#'}}
 
 " Insert python comments at the current indent level
 au FileType python inoremap # X<BS>#
@@ -144,6 +146,8 @@ nnoremap <S-TAB> <<
 nnoremap <TAB> >>
 vnoremap <S-TAB> <gv
 vnoremap <TAB> >gv
+nmap # <plug>NERDCommenterToggle
+vmap # <plug>NERDCommenterToggle gv
 
 " Cut, copy and paste
 vnoremap <C-c> "+y
