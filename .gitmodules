@@ -51,7 +51,7 @@
 	url = https://github.com/mxw/vim-jsx
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
-	url = https://github.com/kien/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim
 [submodule "bundle/vim-flow"]
 	path = bundle/vim-flow
 	url = https://github.com/facebook/vim-flow

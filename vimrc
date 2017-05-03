@@ -14,6 +14,7 @@ let g:flow#enable = 0
 " Settings for CtrlP
 let g:ctrlp_open_new_file = "h"
 let g:ctrlp_arg_map = 1
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " Settings for NERD comment plugin
 let g:NERDSpaceDelims = 1
@@ -85,8 +86,7 @@ set completeopt-=preview
 " disable mouse pointer moving in Insert mode
 set mouse=nv
 
-" remove unwanted files out of wildmenus
-set wildignore+=dist,*env,*.pyc,build,__pycache__,*_modules,main-*.css*,main-*.js*,artifacts/,static/
+" menu settings
 set wildmode=longest,list
 set wildmenu
 
