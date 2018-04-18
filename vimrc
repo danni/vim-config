@@ -118,8 +118,8 @@ set formatoptions=crotqj
 set ts=4 sts=4 tw=0 sw=4 expandtab smarttab smartindent autoindent cc=81
 
 " file type defaults
-au FileType tex,docbk,html setlocal tw=78
-au FileType tex,docbk,html,htmldjango setlocal ts=2 sts=2 sw=2
+" au FileType tex,docbk,html setlocal tw=78
+" au FileType tex,docbk,html,htmldjango setlocal ts=2 sts=2 sw=2
 
 " tag bar
 if has("gui_running")
