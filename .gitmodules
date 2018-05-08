@@ -91,9 +91,9 @@
 [submodule "bundle/vim-css3-syntax"]
 	path = bundle/vim-css3-syntax
 	url = https://github.com/hail2u/vim-css3-syntax
-[submodule "bundle/vim-nodejs-complete"]
-	path = bundle/vim-nodejs-complete
-	url = https://github.com/ahayman/vim-nodejs-complete
 [submodule "bundle/python3-syntax"]
 	path = bundle/python3-syntax
 	url = https://github.com/wmayner/python3-syntax
+[submodule "bundle/completor.vim"]
+	path = bundle/completor.vim
+	url = https://github.com/maralla/completor.vim

@@ -22,9 +22,8 @@ let g:ale_sign_column_always = 1
 " Settings for airline
 let g:airline_powerline_fonts = 1
 
-" Settings for Jedi
-let g:jedi#use_tabs_not_buffers = 1
-let g:jedi#show_call_signatures = 2
+" Settings for completor
+let g:completor_python_binary = '/usr/local/bin/python3'
 
 " Settings for vim-jsx
 let g:jsx_ext_required = 0
@@ -109,10 +108,6 @@ set formatoptions=crotqj
 " editing defaults
 set ts=4 sts=4 tw=0 sw=4 expandtab smarttab smartindent autoindent cc=81
 
-" file type defaults
-" au FileType tex,docbk,html setlocal tw=78
-" au FileType tex,docbk,html,htmldjango setlocal ts=2 sts=2 sw=2
-
 " tag bar
 if has("gui_running")
     function Columns(size)
@@ -172,11 +167,7 @@ nnoremap <A-0> 10gt
 inoremap <A-0> <C-o>10gt
 
 " Omni complete as Ctrl-Space
-inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-\ "\<lt>C-n>" :
-\ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-\ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-\ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+inoremap <expr> <C-Space> pumvisible() ? "<C-N>" : "<C-R>=completor#do('complete')<CR>"
 imap <C-@> <C-Space>
 
 " auto-tabulate cucumber files
