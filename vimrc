@@ -164,8 +164,9 @@ nnoremap <A-0> 10gt
 inoremap <A-0> <C-o>10gt
 
 " Omni complete as Ctrl-Space
-inoremap <expr> <C-Space> pumvisible() ? "<C-N>" : "<C-R>=completor#do('complete')<CR>"
-imap <C-@> <C-Space>
+inoremap <expr> <C-Space> pumvisible() ? "\<C-n>\<C-y>" : "<C-R>=completor#do('complete')<CR>"
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>\<C-y>" : "\<Tab>"
+" imap <C-@> <C-Space>
 
 " auto-tabulate cucumber files
 au FileType cucumber inoremap <silent> <Bar>    <Bar><Esc>:call <SID>align()<CR>a
