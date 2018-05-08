@@ -13,9 +13,6 @@ let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDCustomDelimiters = {'python': {'left': '#'}}
 
-" Insert python comments at the current indent level
-au FileType python inoremap # X<BS>#
-
 " Settings for ALE
 let g:ale_sign_column_always = 1
 
