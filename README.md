@@ -5,7 +5,11 @@ This is Danni's vimrc, it is built on pathogen and git submodules.
 
 Includes config obtained many years ago from Grahame Bowland.
 
-Feel free to clone as .vim and then symlink .vim/vimrc -> .vimrc
+Installing
+----------
+
+    git clone https://github.com/danni/vim-config .vim
+    git submodule update --init bundle/
 
 Maintaining Plugins
 -------------------
