@@ -10,21 +10,12 @@
 [submodule "bundle/vim-colorschemes"]
 	path = bundle/vim-colorschemes
 	url = https://github.com/flazz/vim-colorschemes.git
-[submodule "bundle/vim-distinguished"]
-	path = bundle/vim-distinguished
-	url = https://github.com/Lokaltog/vim-distinguished.git
 [submodule "bundle/closetag"]
 	path = bundle/closetag
 	url = https://github.com/vim-scripts/closetag.vim.git
-[submodule "bundle/conflict-detection"]
-	path = bundle/conflict-detection
-	url = https://github.com/vim-scripts/ConflictDetection.git
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule "bundle/ingo-library"]
-	path = bundle/ingo-library
-	url = https://github.com/vim-scripts/ingo-library.git
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = https://github.com/majutsushi/tagbar
@@ -40,12 +31,6 @@
 [submodule "bundle/mustache"]
 	path = bundle/mustache
 	url = https://github.com/mustache/vim-mustache-handlebars
-[submodule "bundle/ConflictMotions"]
-	path = bundle/ConflictMotions
-	url = https://github.com/vim-scripts/ConflictMotions.git
-[submodule "bundle/CountJump"]
-	path = bundle/CountJump
-	url = https://github.com/vim-scripts/CountJump.git
 [submodule "bundle/vim-jsx"]
 	path = bundle/vim-jsx
 	url = https://github.com/mxw/vim-jsx
@@ -64,15 +49,9 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule "bundle/python-mode"]
-	path = bundle/python-mode
-	url = https://github.com/klen/python-mode
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline
-[submodule "bundle/jedi-vim"]
-	path = bundle/jedi-vim
-	url = https://github.com/davidhalter/jedi-vim
 [submodule "bundle/vim-twig"]
 	path = bundle/vim-twig
 	url = https://github.com/qbbr/vim-twig
