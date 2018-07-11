@@ -142,31 +142,33 @@ inoremap <C-v> <C-o>"+p
 nnoremap <C-t> :tabnew<CR>
 inoremap <C-t> <C-o>:tabnew<CR>
 
-nnoremap <A-1> 1gt
-inoremap <A-1> <C-o>1gt
-nnoremap <A-2> 2gt
-inoremap <A-2> <C-o>2gt
-nnoremap <A-3> 3gt
-inoremap <A-3> <C-o>3gt
-nnoremap <A-4> 4gt
-inoremap <A-4> <C-o>4gt
-nnoremap <A-5> 5gt
-inoremap <A-5> <C-o>5gt
-nnoremap <A-6> 6gt
-inoremap <A-6> <C-o>6gt
-nnoremap <A-7> 7gt
-inoremap <A-7> <C-o>7gt
-nnoremap <A-8> 8gt
-inoremap <A-8> <C-o>8gt
-nnoremap <A-9> 9gt
-inoremap <A-9> <C-o>9gt
-nnoremap <A-0> 10gt
-inoremap <A-0> <C-o>10gt
+nnoremap <D-1> 1gt
+inoremap <D-1> <C-o>1gt
+nnoremap <D-2> 2gt
+inoremap <D-2> <C-o>2gt
+nnoremap <D-3> 3gt
+inoremap <D-3> <C-o>3gt
+nnoremap <D-4> 4gt
+inoremap <D-4> <C-o>4gt
+nnoremap <D-5> 5gt
+inoremap <D-5> <C-o>5gt
+nnoremap <D-6> 6gt
+inoremap <D-6> <C-o>6gt
+nnoremap <D-7> 7gt
+inoremap <D-7> <C-o>7gt
+nnoremap <D-8> 8gt
+inoremap <D-8> <C-o>8gt
+nnoremap <D-9> 9gt
+inoremap <D-9> <C-o>9gt
+nnoremap <D-0> 10gt
+inoremap <D-0> <C-o>10gt
 
 " Omni complete as Ctrl-Space
 inoremap <expr> <C-Space> pumvisible() ? "\<C-n>\<C-y>" : "<C-R>=completor#do('complete')<CR>"
+" Tab takes the first completion
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>\<C-y>" : "\<Tab>"
-" imap <C-@> <C-Space>
+" Don't steal ctrl-u for completion
+inoremap <expr> <C-u> pumvisible() ? "\<Esc>\<C-u>" : "\<C-u>"
 
 " auto-tabulate cucumber files
 au FileType cucumber inoremap <silent> <Bar>    <Bar><Esc>:call <SID>align()<CR>a
